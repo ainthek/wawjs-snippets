@@ -1,42 +1,33 @@
-const fs = require("fs-extra");
+const fs = require("fs");
 const path = require("path");
-const readline = require("readline");
+const { bindNodeCallback, combineLatest } = require("rxjs");
+const { map, flatMap } = require("rxjs/operators");
+
+const isInstalled = require("./ide/is-installed");
+const ideList = require("./ide-config/ide-list");
+
+const parseSnippet = require("./snippet/parse");
 
 
-const SRC_DIR = path.resolve("./src/");
-const OUT_DIR = path.resolve("./out/");
+const readDir = bindNodeCallback(fs.readdir);
+const build = readDir("./src/").pipe(
+    flatMap((files) =>
+        combineLatest(files.map((file) => {
+            const readFile = bindNodeCallback(fs.readFile);
+            const filePath = path.resolve("./src/", file);
 
-// fs.remove(OUT_DIR, function(err) {
-//if (err) throw err;
-fs.readdir(SRC_DIR, (err, files) => {
-    if (err) throw err;
-    files.forEach(file => {
+            return readFile(filePath, "UTF-8").pipe(
+                map(parseSnippet),
+                map((snippet) => ({ filePath, ...snippet }))
+            );
+        }))
+    ),
+    flatMap((snippets) =>
+        combineLatest(
+            ideList.filter((ide) => isInstalled.call(ide))
+                .map((ide) => ide.build(snippets))
+        )
+    )
+);
 
-        const from = path.resolve(SRC_DIR, file);
-        const to = path.resolve(OUT_DIR, path.basename(file, ".js") + ".sublime-snippet");
-
-        // using readFile, writeFile, niot expecting large data 
-        // in snippets
-        fs.readFile(from, "UTF-8", (err, txtData) => {
-            if (err) throw err;
-            
-            let [tabTrigger, description, ...content] = txtData.split(/\r\n|\n|\r/);
-            
-            tabTrigger=tabTrigger.replace(/^\/\/\s+/,"");
-            description=description.replace(/^\/\/\s+/,"");
-
-            let xmlData = `<snippet>
-                <tabTrigger>${tabTrigger}</tabTrigger>
-                <scope>source.js</scope>
-                <description>${description}</description>
-                <content><![CDATA[${content.join("\n")}]]></content>
-            \r</snippet>`
-
-            fs.writeFile(to, xmlData, (err) => {
-                if (err) throw err;
-                console.error("generated:", to);
-            });
-        });
-    });
-});
-
+build.subscribe();

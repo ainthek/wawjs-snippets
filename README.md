@@ -4,42 +4,28 @@ School pet project.
 
 Distributing and installing Snippets for:
 
-- JavaScript
-	- node.js APIs
-	- mocha
-	- ...
-- for editors
-	- Sublime Text 3
-	- ...
+### JavaScript
+- node.js APIs
+- mocha
+- ...
+	
+### Supported editors
+- [Sublime Text 3](https://www.sublimetext.com/3)
+- [Atom](https://atom.io/)
 
-## Installing
+## Installation
 
-	npm install https://github.com/ainthek/wawjs-snippets.git
-
-This will create 
-
-	$HOME/$SUMLIME/wawjs/*.sublime-snippet files	
+1. Install one of the __supported editors__
+1. `git clone https://github.com/timzatko/wawjs-snippets`
+1. `cd wawjs-snippets`
+1. Run `npm install` *(It will install all the dependencies, build snippets and install them to the installed editors)*
+	
 
 ## Development
 
-Clone repo
-	
-	https://github.com/ainthek/wawjs-snippets.git
-
-Run 
-	
-	npm install
-
-Make changes, create new files, make fixes
-
-Then:
-
-	npm run build
-
-Then test
-
-	TODO:
-
-	
-Then commit and PR.
+1. Clone the repository `git clone https://github.com/timzatko/wawjs-snippets`
+1. `cd wawjs-snippets`
+1. `npm install`
+1. Make changes, create new files, make fixes
+1. Commit the changes and make pull request
 

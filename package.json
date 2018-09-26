@@ -5,12 +5,15 @@
   "main": "index.js",
   "scripts": {
     "preinstall": "node scripts/preinstall.js",
-    "install": "node scripts/install.js",
+    "install": "node scripts/build.js && node scripts/install.js",
     "build": "node scripts/build.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fs-extra": "^7.0.0"
+    "fs-extra": "^7.0.0",
+    "rxjs": "^6.3.3",
+    "rxjs-compat": "^6.3.3",
+    "season": "^6.0.2"
   }
 }
