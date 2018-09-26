@@ -33,3 +33,20 @@ If the installer cannot find location of your IDE. Set path into environment var
 1. Make changes, create new files, make fixes
 1. Commit the changes and make pull request
 
+
+### Adding new snippets
+
+Add new snippets to the `./src` folder.
+First line of the snippets contains snippet keyword trigger. The second one contains the snippet description. The rest of the file is snippet itself.
+
+````javascript
+// readFile
+// wawjs - read text file
+
+// path is relative to CWD
+// if path is fd it will not be closed
+fs.readFile(inPath, "UTF-8", (err, data) => {
+    if (err) throw err;
+
+});
+````  
