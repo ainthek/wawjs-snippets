@@ -10,7 +10,7 @@ const getHome = require("./../ide/get-home");
 
 
 const osRelative = {
-    Linux: "", // TODO:
+    Linux: ".atom", // TODO: TODO: Hopefully it works, not tested
     Darwin: ".atom",
     Windows_NT: ".atom"
 };

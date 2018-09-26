@@ -10,7 +10,7 @@ const getHome = require("./../ide/get-home");
 
 
 const osRelative = {
-    Linux: "", // TODO:
+    Linux: ".config/code", // TODO: Hopefully it works, not tested
     Darwin: "Library/Application Support/Code",
     Windows_NT: "AppData/Roaming/Code"
 };
