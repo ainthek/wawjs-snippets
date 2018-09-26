@@ -20,7 +20,10 @@ Distributing and installing Snippets for:
 1. `git clone https://github.com/timzatko/wawjs-snippets`
 1. `cd wawjs-snippets`
 1. Run `npm install` *(It will install all the dependencies, build snippets and install them to the installed editors)*
-	
+
+### Installer cannot find my IDE
+
+If the installer cannot find location of your IDE. Set path into environment variable with name `ATOM_HOME`, `VSCODE_HOME` or `SUBLIME_HOME`.    
 
 ## Development
 
