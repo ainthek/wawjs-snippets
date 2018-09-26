@@ -1,8 +1,9 @@
 const fs = require("fs");
 const path = require("path");
+const mkdirp = require('mkdirp');
 
-const { bindNodeCallback, of, combineLatest } = require("rxjs");
-const { tap, flatMap } = require("rxjs/operators");
+const { bindNodeCallback, combineLatest } = require("rxjs");
+const { tap, flatMap, concat } = require("rxjs/operators");
 
 const getOutDir = require("./../ide/get-out-dir");
 const getHome = require("./../ide/get-home");
@@ -44,16 +45,20 @@ const install = function () {
     const readDir = bindNodeCallback(fs.readdir);
     const copyFile = bindNodeCallback(fs.copyFile);
 
-    return readDir(SRC_DIR).pipe(
-        flatMap((files) => {
-            return combineLatest(files.filter((file) => path.extname(file) === ".sublime-snippet").map((file) => {
-               return copyFile(path.resolve(SRC_DIR, file), path.resolve(INSTALL_DIR, file));
-            }));
-        }),
-        tap(() => {
-            console.log('Sublime snippets installed!');
-        })
-    );
+    const mkDirP = bindNodeCallback(mkdirp);
+
+    return mkDirP(INSTALL_DIR).pipe(concat(
+        readDir(SRC_DIR).pipe(
+            flatMap((files) => {
+                return combineLatest(files.filter((file) => path.extname(file) === ".sublime-snippet").map((file) => {
+                   return copyFile(path.resolve(SRC_DIR, file), path.resolve(INSTALL_DIR, file));
+                }));
+            }),
+            tap(() => {
+                console.log('Sublime snippets installed!');
+            })
+        )
+    ));
 };
 
 module.exports = {
