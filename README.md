@@ -12,6 +12,7 @@ Distributing and installing Snippets for:
 ### Supported editors
 - [Sublime Text 3](https://www.sublimetext.com/3)
 - [Atom](https://atom.io/)
+- [Visual Studio Code](https://code.visualstudio.com/)
 
 ## Installation
 
