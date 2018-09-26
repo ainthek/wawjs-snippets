@@ -12,7 +12,7 @@ const getHome = require("./../ide/get-home");
 const osRelative = {
     Linux: "", // TODO:
     Darwin: "", // TODO:
-    Windows_NT: "AppData/Roaming/Code/User/snippets"
+    Windows_NT: "AppData/Roaming/Code"
 };
 
 const build = function (snippets) {
@@ -37,7 +37,7 @@ const build = function (snippets) {
 };
 
 const install = function() {
-    const INSTALL_FILE = path.resolve(getHome.call(this), "javascript.json");
+    const INSTALL_FILE = path.resolve(getHome.call(this), "User/snippets/javascript.json");
     const SRC_FILE = path.resolve(getOutDir.call(this), "javascript.json");
 
     const writeFile = bindNodeCallback(season.writeFile.bind(season));
