@@ -3,7 +3,6 @@
                 <scope>source.js</scope>
                 <description>wawjs - basic describe block with all methods</description>
                 <content><![CDATA[
-/*global describe:true,it:true,	after:true,before:true,afterEach:true,beforeEach:true */
 describe("//TODO:", function() {
 	it("//TODO:", function(done) {
 		done();
@@ -22,5 +21,6 @@ describe("//TODO:", function() {
 		// var state = this.currentTest.state; //"failed","passed"
 		done();
 	});
-});]]></content>
+});
+]]></content>
             </snippet>

@@ -1,0 +1,12 @@
+<snippet>
+                <tabTrigger>defineProperty</tabTrigger>
+                <scope>source.js</scope>
+                <description>wawjs - defineProperty</description>
+                <content><![CDATA[
+Object.defineProperty(obj, key, {
+  value: null
+  // ,enumerable: false
+  // ,writable:false
+  // ,configurable:false
+});]]></content>
+            </snippet>
