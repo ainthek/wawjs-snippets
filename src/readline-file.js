@@ -11,6 +11,13 @@ const rl = readline.createInterface({
 });
 
 rl.on('line', (line) => {
-    console.log(`Line from file: ${line}`);
+	    
+});
+rl.on('close', () => {
+	// The 'close' event is emitted when:
+	// input ends,
+	// rl.close() is called 
+	// <ctrl>-D EOT, 
+	// <ctrl>-C SIGINT 
 });
 
