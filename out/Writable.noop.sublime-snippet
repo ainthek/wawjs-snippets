@@ -1,0 +1,7 @@
+<snippet>
+                <tabTrigger>Writable noop</tabTrigger>
+                <scope>source.js</scope>
+                <description>wawjs - Writable doing nothing</description>
+                <content><![CDATA[
+new Writable({ write(chunk, enc, cb) { cb(); } })]]></content>
+            </snippet>
