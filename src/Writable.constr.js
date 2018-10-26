@@ -1,5 +1,6 @@
 // Writable - simplified construction
 // wawjs - Writable simplified construction
+
 const { Writable } = require("stream");
 const myWritable = new Writable({
   write(chunk, enc, cb) {

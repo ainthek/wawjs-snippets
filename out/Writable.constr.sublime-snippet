@@ -2,7 +2,8 @@
                 <tabTrigger>Writable - simplified construction</tabTrigger>
                 <scope>source.js</scope>
                 <description>wawjs - Writable simplified construction</description>
-                <content><![CDATA[const { Writable } = require("stream");
+                <content><![CDATA[
+const { Writable } = require("stream");
 const myWritable = new Writable({
   write(chunk, enc, cb) {
     //0) chunk can be Buffer|string|any
