@@ -47,6 +47,5 @@ First line of the snippets contains snippet keyword trigger. The second one cont
 // if path is fd it will not be closed
 fs.readFile(inPath, "UTF-8", (err, data) => {
     if (err) throw err;
-
 });
-````  
+````

@@ -14,5 +14,6 @@
     "rxjs": "^6.3.3",
     "rxjs-compat": "^6.3.3",
     "season": "^6.0.2"
-  }
+  },
+  "devDependencies": {}
 }
