@@ -1,5 +1,5 @@
 // readFile
-// wawjs - read text file
+// wawjs - read WHOLE text file
 
 // path is relative to CWD
 // if path is fd it will not be closed
