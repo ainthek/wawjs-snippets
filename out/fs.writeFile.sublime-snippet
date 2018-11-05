@@ -1,7 +1,7 @@
 <snippet>
                 <tabTrigger>writeFile</tabTrigger>
                 <scope>source.js</scope>
-                <description>wawjs - writing file</description>
+                <description>wawjs - writing WHOLE file</description>
                 <content><![CDATA[
 // fs.writeFile(file, data[, options], callback)
 // replacing the file if it already exists. 

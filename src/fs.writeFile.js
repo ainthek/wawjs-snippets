@@ -1,5 +1,5 @@
 // writeFile
-// wawjs - writing file
+// wawjs - writing WHOLE file
 
 // fs.writeFile(file, data[, options], callback)
 // replacing the file if it already exists. 

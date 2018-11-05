@@ -1,0 +1,7 @@
+<snippet>
+                <tabTrigger>readable events</tabTrigger>
+                <scope>source.js</scope>
+                <description>wawjs - writable events</description>
+                <content><![CDATA[
+//TODO:]]></content>
+            </snippet>

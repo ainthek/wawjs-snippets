@@ -54,12 +54,12 @@ class MyWritable extends Writable {
     // before the stream closes, 
     // delaying the 'finish' event until callback is called.
 
-    // This is useful to close resources 
-    // or write buffered data before a stream ends.
+    // This is useful 
+    // write buffered data before a stream ends
+    this.resource.push(this._decoder.end());
+    // and to close resources 
     this.resource = null;
     this._decoder = null;
   }
-}
-
-]]></content>
+}]]></content>
             </snippet>
