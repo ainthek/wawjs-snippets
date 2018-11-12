@@ -17,7 +17,7 @@ Distributing and installing Snippets for:
 ## Installation
 
 1. Install one of the __supported editors__
-1. `git clone https://github.com/timzatko/wawjs-snippets`
+1. `git clone https://github.com/ainthek/wawjs-snippets`
 1. `cd wawjs-snippets`
 1. Run `npm install` *(It will install all the dependencies, build snippets and install them to the installed editors)*
 
@@ -27,7 +27,7 @@ If the installer cannot find location of your IDE. Set path into environment var
 
 ## Development
 
-1. Clone the repository `git clone https://github.com/timzatko/wawjs-snippets`
+1. Clone the repository `git clone https://github.com/ainthek/wawjs-snippets`
 1. `cd wawjs-snippets`
 1. `npm install`
 1. Make changes, create new files, make fixes
