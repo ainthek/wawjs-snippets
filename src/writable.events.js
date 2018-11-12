@@ -1,4 +1,4 @@
-// readable events
+// writable events
 // wawjs - writable events
 
 writable
