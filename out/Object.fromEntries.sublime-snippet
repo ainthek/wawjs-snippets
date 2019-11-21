@@ -1,0 +1,7 @@
+<snippet>
+                <tabTrigger>fromEntries,Object.fromEntries</tabTrigger>
+                <scope>source.js</scope>
+                <description>wawjs - oneliner shim for Object.fromEntries</description>
+                <content><![CDATA[
+const fromEntries = Object.fromEntries || ((a) => a.reduce((r, [k, v]) => (r[k] = v, r), {}));]]></content>
+            </snippet>

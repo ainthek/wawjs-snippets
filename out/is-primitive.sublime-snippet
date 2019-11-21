@@ -1,0 +1,9 @@
+<snippet>
+                <tabTrigger>isPrimitive</tabTrigger>
+                <scope>source.js</scope>
+                <description>wawjs - oneline function</description>
+                <content><![CDATA[
+const isPrimitive = (v) => (typeof v !== 'object' && typeof v !== 'function') || v === null;
+
+]]></content>
+            </snippet>
