@@ -31,7 +31,7 @@ class MyReadable extends Readable {
         this.push(null);
         //d) signal error in reading
         // proces.nextTick(...)
-        this.emit('error', err)
+        this.destroy(err)
         //e) do not call or delay
         //   the call to push()   
     }
