@@ -18,7 +18,14 @@ Distributing and installing Snippets for:
 
 This will create 
 
-	$HOME/$SUMLIME/wawjs/*.sublime-snippet files	
+	$SUMLIME/wawjs/*.sublime-snippet files	
+
+in 
+	Linux: ".config/sublime-text-3/",
+    Darwin: "Library/Application Support/Sublime Text/",
+    Windows_NT: "AppData/Roaming/Sublime Text 3/"
+
+see sublime-home.js
 
 ## Development
 

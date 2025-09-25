@@ -3,7 +3,7 @@ const path = require("path");
 
 const osRelative = {
     Linux: ".config/sublime-text-3/",
-    Darwin: "Library/Application Support/Sublime Text 3/",
+    Darwin: "Library/Application Support/Sublime Text/",
     Windows_NT: "AppData/Roaming/Sublime Text 3/"
 }
 
